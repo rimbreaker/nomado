@@ -1,19 +1,43 @@
 {
+  "homepage": "https://rimbreaker.github.io/nomado",
   "name": "react-globe-test",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@craco/craco": "^6.2.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "@types/jest": "^26.0.15",
     "@types/node": "^12.0.0",
-    "@types/react": "^16.9.53",
+    "@types/react": "^17.0.19",
     "@types/react-dom": "^16.9.8",
+    "bootstrap": "^5.1.0",
+    "cesium": "^1.84.0",
+    "craco-cesium": "^1.2.0",
+    "framer-motion": "^4.1.17",
+    "i18next": "^20.4.0",
+    "i18next-browser-languagedetector": "^6.1.2",
+    "i18next-http-backend": "^1.3.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-error-boundary": "^3.1.3",
+    "react-i18next": "^11.11.4",
+    "react-parallax-tilt": "^1.5.57",
+    "react-redux": "^7.2.4",
+    "react-router": "^5.2.1",
+    "react-router-dom": "^5.2.1",
     "react-scripts": "4.0.3",
+    "reactstrap": "^8.9.0",
+    "redux": "^4.1.1",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-persist": "^6.0.0",
+    "redux-saga": "^1.1.3",
+    "reselect": "^4.0.0",
+    "resium": "^1.13.1",
+    "typed.js": "^2.0.12",
     "typescript": "^4.0.3",
+    "vanilla-tilt": "^1.7.1",
     "web-vitals": "^0.2.4",
     "workbox-background-sync": "^5.1.3",
     "workbox-broadcast-update": "^5.1.3",
@@ -29,10 +53,13 @@
     "workbox-streams": "^5.1.3"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "cypress-test": "cypress open",
+    "eject": "react-scripts eject",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -51,5 +78,18 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged --max-warnings=0"
+    }
+  },
+  "devDependencies": {
+    "@types/react-router-dom": "^5.1.8",
+    "cypress": "^8.3.1",
+    "gh-pages": "^3.2.3",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
+    "mocha": "^9.1.1"
   }
 }

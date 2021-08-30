@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
+import LowSizeSpinner from './components/LowSizeSpinner';
+import './utils/i18n'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Suspense fallback={<LowSizeSpinner />}>
+      <App />
+    </Suspense>
   </React.StrictMode>,
   document.getElementById('root')
 );

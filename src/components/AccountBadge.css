@@ -1,0 +1,44 @@
+.navbar-nav {
+  max-width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav-item {
+  display: flex;
+  min-width: 3em;
+  max-width: 5em;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar {
+  border-radius: 50%;
+  height: 2.5em;
+  width: 2.5em;
+}
+
+.dropdown-menu {
+  position: absolute;
+  bottom: -6.5rem;
+  right: 1rem;
+  color: black;
+  background-color: white;
+  padding: 0.5em;
+  border-radius: 5px;
+  width: fit-content;
+
+}
+
+.dropdown-item {
+  border-bottom: 1px black solid;
+  padding: 0.5em;
+  cursor: pointer;
+  transition: 0.5s;
+  border-radius: 5px;
+}
+
+.dropdown-item:hover {
+  background-color: turquoise;
+}
