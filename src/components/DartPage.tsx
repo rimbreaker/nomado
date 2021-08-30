@@ -4,7 +4,7 @@ import { useHistory } from 'react-router'
 import { startSpinning } from '../state/actions/globeActions'
 import { resetSingleCity } from '../state/actions/singleCityActions'
 import { isThereMoreThanOneCityNearby } from '../state/selectors/nearCitySelectors'
-import './DraftPage.css'
+import './DartPage.css'
 
 const DraftPage = () => {
     const history = useHistory()
