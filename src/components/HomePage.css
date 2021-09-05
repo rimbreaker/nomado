@@ -35,6 +35,7 @@
   border-bottom: 2px black solid;
   margin: 0;
   padding: 0.5rem;
+  cursor: pointer;
 }
 
 .tab-after {
@@ -44,6 +45,7 @@
   border-bottom: 2px black solid;
   margin: 0;
   padding: 0.5rem;
+  cursor: pointer;
 }
 
 .further-tab {
@@ -53,6 +55,7 @@
   border-right: 1px black solid;
   margin: 0;
   padding: 0.5rem;
+  cursor: pointer;
 }
 
 .right-edge-tab {
@@ -61,6 +64,7 @@
   border-bottom: 2px black solid;
   margin: 0;
   padding: 0.5rem;
+  cursor: pointer;
 }
 
 .left-edge-tab {
@@ -69,6 +73,7 @@
   border-right: 1px black solid;
   margin: 0;
   padding: 0.5rem;
+  cursor: pointer;
 }
 
 .tab-button {
@@ -80,6 +85,7 @@
   width: 100%;
   cursor: pointer;
   transition: 0.5s;
+  cursor: pointer;
 }
 
 .tab-button:hover {

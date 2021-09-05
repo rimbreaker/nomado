@@ -63,6 +63,7 @@ export const singleCityDataReducer = (
         ...state,
         id: "",
         fetchedBasicCityData: initFetchedBasicCityData,
+        extendedCityData: initialExtendedData,
       };
     }
     case ActionTypes.EXTENDED_CITY_DATA_FETCH_SUCCEDEED:

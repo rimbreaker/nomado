@@ -4,6 +4,9 @@ import { useHistory } from 'react-router'
 import { useDetectClickAway } from '../hooks/useDetectClickAway'
 import { changeName } from '../state/actions/SplashScreenActions'
 import './AccountBadge.css'
+import * as Paths from '../utils/Paths'
+import { resetSingleCity } from '../state/actions/singleCityActions'
+import WidgetPageCategoryPicker from './WidgetPageCategoryPicker'
 
 const AccountBadge = () => {
     const name = useSelector((state: RootStateOrAny) => state.splashScreen.userName)
@@ -17,9 +20,12 @@ const AccountBadge = () => {
     return (
         <div style={{ display: 'flex', justifyContent: 'space-between', width: '90%' }}>
 
-            {history.location.pathname !== '/' && <h1 style={{ color: 'white', cursor: 'pointer' }} onClick={() => history.push('/')}>Home</h1>}
-            {/* arbitrary div for flexbox */}
-            <div ></div>
+            {history.location.pathname !== Paths.HOME && <h1 style={{ color: 'white', cursor: 'pointer' }} onClick={() => {
+                history.push(Paths.HOME);
+                dispatch(resetSingleCity())
+            }}>Home</h1>}
+
+            <div >{<WidgetPageCategoryPicker />}</div>
             <div ref={dropdownListRef} className='nav-item'>
                 <img className='avatar' src={`https://avatars.dicebear.com/api/identicon/${name}.svg`} alt=''></img>
                 <div style={{
@@ -28,7 +34,7 @@ const AccountBadge = () => {
                 }} onClick={() => { setOpen(prev => !prev) }}>{name}{open ? '🔼' : '🔽'}
                 </div>
                 <ul style={{ display: open ? '' : 'none' }} className='dropdown-menu'>
-                    <li className='dropdown-item' onClick={() => history.push('/recentlist')}>show recently viewed locations</li>
+                    <li className='dropdown-item' onClick={() => history.push(Paths.RECENT_LIST)}>show recently viewed locations</li>
                     <li className='dropdown-item' onClick={() => dispatch(changeName())}>change name</li>
                 </ul>
             </div>

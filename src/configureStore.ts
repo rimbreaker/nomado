@@ -7,6 +7,8 @@ import { splashScreenReducer } from "./state/reducers/SplashScreenReducer";
 import { globeReducer } from "./state/reducers/GlobeReducer";
 import rootSaga from "./state/sagas/rootSaga";
 import { singleCityDataReducer } from "./state/reducers/SingleCityData";
+import { recentLocationsListReducer } from "./state/reducers/RecentLocationsList";
+import { widgetPageReducer } from "./state/reducers/WidgetPageReducer";
 
 const persistConfig = {
   key: "root",
@@ -18,6 +20,8 @@ const rootReducer = combineReducers({
   splashScreen: splashScreenReducer,
   globe: globeReducer,
   singleCity: singleCityDataReducer,
+  recentLocations: recentLocationsListReducer,
+  widgetPage: widgetPageReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

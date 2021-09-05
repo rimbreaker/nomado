@@ -11,13 +11,28 @@ const getSalaries = (state: RootStateOrAny) =>
 
 const getCityScores = (state: RootStateOrAny) =>
   state.singleCity.extendedCityData.data?._embedded?.["city:urban_area"]
-    ?._embedded?.["ua:scores"]?.salaries ?? false;
+    ?._embedded?.["ua:scores"] ?? false;
+
+const getUrbanAreaBasics = (state: RootStateOrAny) =>
+  state.singleCity.extendedCityData.data?._embedded?.["city:urban_area"] ??
+  false;
+
+const getUrbanAreaDetails = (state: RootStateOrAny) =>
+  state.singleCity.extendedCityData.data?._embedded?.["city:urban_area"]
+    ?._embedded?.["ua:details"]?.categories ?? false;
+
+const getUrbanAreaSlug = (state: RootStateOrAny) =>
+  state.singleCity.extendedCityData.data?._embedded?.["city:urban_area"]
+    ?.slug ?? false;
 
 const areThereCityPhotos = createSelector(getUrbanAreaImages, (images) => {
   if (images)
-    return images.map(
-      (image: { image: { mobile: string; web: string } }) => image.image
-    );
+    return images
+      .map((image: { image: { mobile: string; web: string } }) => [
+        image.image.mobile,
+        image.image.web,
+      ])
+      .flat();
   return false;
 });
 
@@ -25,7 +40,7 @@ const areThereSalaryInfo = createSelector(getSalaries, (salaries) => {
   return salaries;
 });
 
-const gareThereCityScores = createSelector(getCityScores, (scores) => {
+const areThereCityScores = createSelector(getCityScores, (scores) => {
   if (scores)
     return {
       categories: scores.categories,
@@ -35,4 +50,23 @@ const gareThereCityScores = createSelector(getCityScores, (scores) => {
   return false;
 });
 
-export { gareThereCityScores, areThereSalaryInfo, areThereCityPhotos };
+const areThereUrbanAreaBasics = createSelector(
+  getUrbanAreaBasics,
+  (basics) => basics
+);
+
+const areThereUrbanAreaDetails = createSelector(
+  getUrbanAreaDetails,
+  (details) => details
+);
+
+const isThereCitySlug =createSelector(getUrbanAreaSlug,(slug)=>slug)
+
+export {
+  areThereCityScores,
+  areThereSalaryInfo,
+  areThereCityPhotos,
+  areThereUrbanAreaBasics,
+  areThereUrbanAreaDetails,
+  isThereCitySlug
+};

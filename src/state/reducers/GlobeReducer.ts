@@ -11,33 +11,12 @@ const initNearbyCities = {
 
 export const globeReducer = (
   state = {
-    fastSpinning: false,
-    slowRevolving: true,
     coords: { long: 0, lat: 0 } as Coordinates,
     fetchedNearCities: initNearbyCities,
   },
   action: Action
 ) => {
   switch (action.type) {
-    case ActionTypes.START_SPINNING:
-      return {
-        ...state,
-        fastSpinning: true,
-        slowRevolving: false,
-        fetchedNearCities: initNearbyCities,
-      };
-    case ActionTypes.START_REVOLVING:
-      return {
-        ...state,
-        fastSpinning: false,
-        slowRevolving: true,
-      };
-    case ActionTypes.START_SIGHTSEEING:
-      return {
-        ...state,
-        fastSpinning: false,
-        slowRevolving: false,
-      };
     case ActionTypes.PICK_COORDINATES:
       return {
         ...state,
@@ -66,6 +45,12 @@ export const globeReducer = (
           cityLinks: action.payload.cityLinks,
         },
       };
+    case ActionTypes.RESET_SINGLE_CITY: {
+      return {
+        ...state,
+        fetchedNearCities: initNearbyCities,
+      };
+    }
     default:
       return state;
   }

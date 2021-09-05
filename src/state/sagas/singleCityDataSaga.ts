@@ -27,6 +27,7 @@ function* getSingleCityDataSaga() {
 function* getSingleCity(): Generator<StrictEffect, any, any> {
   const cityId = yield select((state) => state.singleCity.id);
   const cityDataResopnse = yield call(fetchBasicCityData, cityId);
+  console.log(cityDataResopnse);
   if (cityDataResopnse) {
     yield all([
       call(getBasicCityInfo, cityDataResopnse),
@@ -74,8 +75,6 @@ function* getAllPossibleEmbededData(
   const namesToEmbed = Object.keys(cityDataResopnse._links).filter((link) =>
     link.includes("city")
   );
-  console.log(namesToEmbed);
-  //urban area salary + images + scores
 
   let embed = "";
   if (namesToEmbed && namesToEmbed.length > 0) {
@@ -85,7 +84,7 @@ function* getAllPossibleEmbededData(
       if (link.includes("urban_area")) {
         embed =
           embed +
-          "city:urban_area/ua:images&embed=city:urban_area/ua:salaries&embed=city:urban_area/ua:scores";
+          "city:urban_area/ua:images&embed=city:urban_area/ua:salaries&embed=city:urban_area/ua:scores&embed=city:urban_area/ua:details";
       } else embed = embed + link;
     });
   }

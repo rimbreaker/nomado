@@ -1,22 +1,23 @@
 import React from 'react'
+import { useSelector, RootStateOrAny } from 'react-redux'
 import './SingleCityPage.css'
 
 const WidgetPage = () => {
-    const widget = document.getElementById('teleport-widget')!
-    widget.style.display = ''
-    widget.style.position = 'absolute'
-    widget.style.top = '0';
 
-    widget.style.marginLeft = 'auto';
-    widget.style.marginRight = 'auto';
-    widget.style.left = '0';
-    widget.style.right = '0';
-    widget.style.textAlign = 'center';
-    widget.style.zIndex = '2';
-
+    const currentCategory = useSelector((state: RootStateOrAny) => state.widgetPage.category)
 
     return (
-        <div ></div>)
+        <iframe style={{
+            position: 'absolute',
+            zIndex: 1,
+            top: '8vh',
+            height: '100vh',
+            width: '100%',
+            right: 0,
+            left: 0,
+            margin: 'auto'
+        }} src={`https://teleport.org/cities/berlin/widget/${currentCategory}/?currency=USD`} title='widget' ></iframe>
+    )
 }
 
 export default WidgetPage

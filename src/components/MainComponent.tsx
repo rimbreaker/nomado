@@ -2,32 +2,33 @@ import React from 'react';
 import '../App.css';
 import SplashScreenHeader from './SplashScreenHeader';
 import GlobeBackground from './GlobeBackground';
-import { Switch, Route, withRouter } from 'react-router-dom'
+import { Switch, Route, withRouter, Redirect } from 'react-router-dom'
 import HomePage from './HomePage'
 import DraftPage from './DartPage';
 import SingleCityPage from './SingleCityPage';
 import WidgetPage from './WidgetPage';
+import RecentLocationsListPage from './RecentLocationsListPage';
+import * as Paths from '../utils/Paths'
 
 function MainComponent() {
-    const placeholderStyle = {
-        display: 'flex',
-        zIndex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: '100vh',
-        width: '100vw',
-        color: 'white',
-        position: 'absolute'
+
+    const SingleCityPageById = ({ match }: { match: any }) => {
+        return <SingleCityPage id={match.params.id} />
     }
+
+
     return (
-        < >
+        <>
             <SplashScreenHeader />
             <Switch>
-                <Route exact path="/dart" component={DraftPage} />
-                <Route exact path="/search" component={WidgetPage} />
-                <Route exact path="/city/:id" component={SingleCityPage} />
-                <Route exact path="/recentlist" component={() => <div style={placeholderStyle as any}>recent list placeholder</div>} />
-                <Route path="/" component={HomePage} />
+                <Route exact path={Paths.DART} component={DraftPage} />
+                <Route exact path={Paths.WIDGET} component={WidgetPage} />
+                <Route exact path={Paths.CITY}
+                    component={SingleCityPageById}
+                />
+                <Route exact path={Paths.RECENT_LIST} component={RecentLocationsListPage} />
+                <Route exact path={Paths.HOME} component={HomePage} />
+                <Redirect to={Paths.HOME} />
             </Switch>
             <GlobeBackground />
         </>

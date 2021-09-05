@@ -5,6 +5,7 @@ import { startSpinning } from '../state/actions/globeActions'
 import { resetSingleCity } from '../state/actions/singleCityActions'
 import { isThereMoreThanOneCityNearby } from '../state/selectors/nearCitySelectors'
 import './DartPage.css'
+import * as Paths from '../utils/Paths'
 
 const DraftPage = () => {
     const history = useHistory()
@@ -13,13 +14,12 @@ const DraftPage = () => {
 
     useEffect(() => {
         dispatch(startSpinning())
-        dispatch(resetSingleCity())
     }, [])
 
     useEffect(() => {
         if (typeof isOnlyCity !== 'boolean') {
             const cityId = isOnlyCity.link.split(':').pop().split("/")[0]
-            history.push(`/city/${cityId}`)
+            history.push(Paths.CITY.replace(":id", cityId))
         }
     }, [isOnlyCity])
 
