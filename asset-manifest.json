@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/nomado/static/css/main.dfeace97.chunk.css",
-    "main.js": "/nomado/static/js/main.5029ebcf.chunk.js",
-    "main.js.map": "/nomado/static/js/main.5029ebcf.chunk.js.map",
+    "main.js": "/nomado/static/js/main.ca659e8a.chunk.js",
+    "main.js.map": "/nomado/static/js/main.ca659e8a.chunk.js.map",
     "runtime-main.js": "/nomado/static/js/runtime-main.4de1276d.js",
     "runtime-main.js.map": "/nomado/static/js/runtime-main.4de1276d.js.map",
-    "static/js/2.fb97ab7d.chunk.js": "/nomado/static/js/2.fb97ab7d.chunk.js",
-    "static/js/2.fb97ab7d.chunk.js.map": "/nomado/static/js/2.fb97ab7d.chunk.js.map",
+    "static/js/2.f084aae1.chunk.js": "/nomado/static/js/2.f084aae1.chunk.js",
+    "static/js/2.f084aae1.chunk.js.map": "/nomado/static/js/2.f084aae1.chunk.js.map",
     "static/js/3.05ebded0.chunk.js": "/nomado/static/js/3.05ebded0.chunk.js",
     "static/js/3.05ebded0.chunk.js.map": "/nomado/static/js/3.05ebded0.chunk.js.map",
     "cesium/Assets/IAU2006_XYS/IAU2006_XYS_0.json": "/nomado/cesium/Assets/IAU2006_XYS/IAU2006_XYS_0.json",
@@ -383,13 +383,13 @@
     "service-worker.js": "/nomado/service-worker.js",
     "service-worker.js.map": "/nomado/service-worker.js.map",
     "static/css/main.dfeace97.chunk.css.map": "/nomado/static/css/main.dfeace97.chunk.css.map",
-    "static/js/2.fb97ab7d.chunk.js.LICENSE.txt": "/nomado/static/js/2.fb97ab7d.chunk.js.LICENSE.txt",
+    "static/js/2.f084aae1.chunk.js.LICENSE.txt": "/nomado/static/js/2.f084aae1.chunk.js.LICENSE.txt",
     "static/media/getFetch.cjs": "/nomado/static/media/getFetch.582d29c4.cjs"
   },
   "entrypoints": [
     "static/js/runtime-main.4de1276d.js",
-    "static/js/2.fb97ab7d.chunk.js",
+    "static/js/2.f084aae1.chunk.js",
     "static/css/main.dfeace97.chunk.css",
-    "static/js/main.5029ebcf.chunk.js"
+    "static/js/main.ca659e8a.chunk.js"
   ]
 }
