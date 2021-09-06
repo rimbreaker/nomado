@@ -1,12 +1,11 @@
 import React from 'react';
-import './App.css';
-import MainComponent from './components/MainComponent';
+import MainComponent from './globalComponents/MainComponent';
 import { ErrorBoundary } from 'react-error-boundary'
 import { Provider as ReduxProvider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
 import { PersistGate } from 'redux-persist/integration/react'
 import { ConfigureStore } from './configureStore';
-import ErrorFallbackComponent from './components/ErrorFallbackComponent'
+import ErrorFallbackComponent from './globalComponents/ErrorFallbackComponent'
 
 const { store, persistor } = ConfigureStore()
 

@@ -1,0 +1,15 @@
+.dart-top-label {
+  display: flex;
+  z-index: 1;
+  align-items: center;
+  justify-content: flex-end;
+  height: 12vh;
+  font-size: large;
+  margin: 0em 40vw;
+  color: black;
+  position: absolute;
+  flex-direction: column;
+  background: white;
+  border-radius: 0.5em;
+  padding: 0.5rem;
+}

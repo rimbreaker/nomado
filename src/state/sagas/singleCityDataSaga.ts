@@ -27,7 +27,6 @@ function* getSingleCityDataSaga() {
 function* getSingleCity(): Generator<StrictEffect, any, any> {
   const cityId = yield select((state) => state.singleCity.id);
   const cityDataResopnse = yield call(fetchBasicCityData, cityId);
-  console.log(cityDataResopnse);
   if (cityDataResopnse) {
     yield all([
       call(getBasicCityInfo, cityDataResopnse),
@@ -39,7 +38,7 @@ function* getSingleCity(): Generator<StrictEffect, any, any> {
 }
 
 function* getBasicCityInfo(
-  cityDataResopnse: any
+  cityDataResopnse: BasicCityDataRes
 ): Generator<StrictEffect, any, any> {
   const cityLink = yield select(
     (state) => state.singleCity.fetchedBasicCityData.cityLink
@@ -68,7 +67,7 @@ function* getBasicCityInfo(
 }
 
 function* getAllPossibleEmbededData(
-  cityDataResopnse: any
+  cityDataResopnse: BasicCityDataRes
 ): Generator<StrictEffect, any, any> {
   const cityId = yield select((state) => state.singleCity.id);
 
@@ -81,11 +80,7 @@ function* getAllPossibleEmbededData(
     namesToEmbed.forEach((link, i) => {
       if (i === 0) embed = embed + "?embed=";
       else embed = embed + "&embed=";
-      if (link.includes("urban_area")) {
-        embed =
-          embed +
-          "city:urban_area/ua:images&embed=city:urban_area/ua:salaries&embed=city:urban_area/ua:scores&embed=city:urban_area/ua:details";
-      } else embed = embed + link;
+      embed = embed + link;
     });
   }
 

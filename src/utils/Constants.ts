@@ -21,3 +21,8 @@ export const WIDGET_TABS_EMOJIS = [
   "🗻",
   "💻",
 ];
+
+export const WELCOME_MESSAGE = [
+  "Welcome digital nomad",
+  "what do they call you?",
+];

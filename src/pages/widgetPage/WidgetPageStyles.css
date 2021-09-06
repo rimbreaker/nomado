@@ -1,0 +1,36 @@
+.category-dropdown {
+  margin: 2em;
+}
+
+.category-dropdown-label {
+  cursor: pointer;
+  margin: 0px 1em;
+}
+
+.category-dropdown-list {
+  position: absolute;
+  z-index: 3;
+  height: fit-content;
+  top: 4em;
+  right: 0;
+  color: black;
+  background-color: white;
+  padding: 0.5em;
+  border-radius: 5px;
+  width: fit-content;
+  list-style-type: none;
+  left: 0;
+  margin: auto;
+  border: 1px black solid;
+}
+
+.widget-iframe {
+  position: absolute;
+  z-index: 1;
+  top: 8vh;
+  height: 100vh;
+  width: 100%;
+  right: 0;
+  left: 0;
+  margin: auto;
+}

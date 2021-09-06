@@ -1,0 +1,132 @@
+.tilt-parallax {
+  transform-style: preserve-3d;
+  border-radius: 2em;
+  display: flex;
+  margin: 0em 3em;
+  text-align: center;
+  cursor: pointer;
+}
+
+.card-wrapper {
+  display: flex;
+  z-index: 1;
+  align-items: stretch;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  color: black;
+  top: 10em;
+  position: absolute;
+  align-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.selected-tab {
+  font-size: large;
+  margin: 0;
+  padding: 0.5rem;
+}
+
+.tab-before {
+  font-size: medium;
+  border-right: 0.2em black solid;
+  border-bottom-right-radius: 0.5em;
+  border-bottom: 0.2em black solid;
+  margin: 0;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.tab-after {
+  font-size: medium;
+  border-left: 0.2em black solid;
+  border-bottom-left-radius: 0.5em;
+  border-bottom: 0.2em black solid;
+  margin: 0;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.further-tab {
+  font-size: medium;
+  border-left: 0.1em black solid;
+  border-bottom: 0.2em black solid;
+  border-right: 0.1em black solid;
+  margin: 0;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.right-edge-tab {
+  font-size: medium;
+  border-left: 0.1em black solid;
+  border-bottom: 0.2em black solid;
+  margin: 0;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.left-edge-tab {
+  font-size: medium;
+  border-bottom: 0.2em black solid;
+  border-right: 0.1em black solid;
+  margin: 0;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.tab-button {
+  font-size: 2rem;
+  border: 0.1em black solid;
+  max-width: 8rem;
+  text-align: center;
+  border-radius: 2em;
+  width: 100%;
+  cursor: pointer;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.tab-button:hover {
+  background-color: darkgray;
+}
+
+.home-tab-card-wrapper {
+  max-width: 40em;
+  max-height: 30em;
+  background-color: white;
+  border-radius: 2em;
+}
+
+.simple-flex {
+  display: flex;
+}
+
+.column-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.paragraph {
+  width: 95%;
+  text-align: center;
+}
+
+.tilt-card-inner-wrapper {
+  max-height: 30em;
+  max-width: 20em;
+  background-color: white;
+  border-radius: 1em;
+}
+
+.tilt-transform {
+  transform: translateZ(30px);
+}
+
+.big-tilt-transform {
+  transform: translateZ(30px);
+  font-size: 5rem;
+}

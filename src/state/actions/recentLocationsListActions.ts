@@ -1,6 +1,6 @@
 import * as ActionTypes from "./ActionTypes";
 
-export const saveRecentLocations = (locations: any[]) => ({
+export const saveRecentLocations = (locations: RecentLocation[]) => ({
   type: ActionTypes.SAVE_RECENT_LOCATIONS,
   payload: locations,
 });

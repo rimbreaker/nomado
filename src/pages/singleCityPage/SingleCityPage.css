@@ -1,0 +1,88 @@
+.widget-tab {
+  height: 40vh;
+  width: 100%;
+}
+
+.tab-card-wrapper {
+  display: flex;
+  z-index: 1;
+  align-items: stretch;
+  justify-content: center;
+  color: black;
+  bottom: 0em;
+  position: absolute;
+  align-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  right: 0;
+  left: 0;
+}
+
+.tab-card {
+  max-height: 80vh;
+  background-color: white;
+  border-top-right-radius: 2em;
+  border-top-left-radius: 2em;
+  width: 100vw;
+}
+
+.tab-headers {
+  display: flex;
+}
+
+.single-tab-header {
+  width: max-content;
+  text-align: center;
+}
+
+.card-tab-chevron {
+  cursor: pointer;
+  margin: 0.5em 1em;
+  right: 0;
+  margin-left: auto;
+}
+
+.single-city-page-label {
+  display: flex;
+  z-index: 1;
+  align-items: center;
+  justify-content: flex-end;
+  height: 12vh;
+  font-size: large;
+  margin: 0em 40vw;
+  color: black;
+  position: relative;
+  flex-direction: column;
+  background: white;
+  border-radius: 1em;
+  padding: 0.5rem;
+  font-size: xx-large;
+  margin: auto;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.basic-info-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.alternate-names {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.alternate-names-scroller {
+  max-height: 4em;
+  overflow-y: auto;
+}
+
+.no-margin {
+  margin: 0em;
+}

@@ -1,17 +1,5 @@
 import * as ActionTypes from "./ActionTypes";
 
-export const startSpinning = () => ({
-  type: ActionTypes.START_SPINNING,
-});
-
-export const startRevolving = () => ({
-  type: ActionTypes.START_REVOLVING,
-});
-
-export const startSightseeing = () => ({
-  type: ActionTypes.START_SIGHTSEEING,
-});
-
 export const pickCoordinates = (coords: Coordinates) => ({
   type: ActionTypes.PICK_COORDINATES,
   payload: coords,

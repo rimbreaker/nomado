@@ -31,7 +31,7 @@ function* throwDart(): Generator<StrictEffect, any, any> {
   const cityLinks: string[] = [];
   if (nearestCitiesData) {
     nearestCitiesData._embedded["location:nearest-cities"]?.forEach(
-      (nearCityData: any) => {
+      (nearCityData: LocationNearestCityElement) => {
         cityLinks.push(nearCityData._links["location:nearest-city"].href);
         cityNames.push(nearCityData._links["location:nearest-city"].name);
         const latlon =

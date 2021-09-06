@@ -3,7 +3,7 @@ import { Action } from "../../types/ActionType";
 
 export const recentLocationsListReducer = (
   state = {
-    list: [],
+    list: [] as RecentLocation[],
   },
   action: Action
 ) => {
@@ -16,7 +16,7 @@ export const recentLocationsListReducer = (
     case ActionTypes.DELETE_SINGLE_RECENT_LOCATION:
       return {
         ...state,
-        list: state.list.filter((city: any) => city.id !== action.payload),
+        list: state.list.filter((city) => city.id !== action.payload),
       };
     case ActionTypes.CLEAR_RECENTS_LIST:
       return {
